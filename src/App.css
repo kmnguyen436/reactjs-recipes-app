@@ -1,0 +1,21 @@
+#root {
+  color: rgb(255, 255, 255);
+}
+
+.side-nav { 
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  background-color: rgb(18, 18, 18);
+  opacity: 80%;
+}
+#nav-list {
+  list-style-type: none;
+}
+
+.nav-list-item {
+  margin-top:50px;
+  padding: 20px;
+}
