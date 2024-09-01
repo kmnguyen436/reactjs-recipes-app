@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import FavRecipeListComponent from '../component/FavRecipeListComponent'
 import FavRecipeListDetails from '../component/FavRecipeListDetails'
 
 export default function FavRecipesPage(props) {
   const { favRecipes } = props;
-  const contentRight = Array.from({ length: 50 }, (_, i) => `Right Item ${i + 1}`);
+  const [isListEmpty, setIsListEmpty] = useState(true);
+  const [itemSelected, setItemSelected] = useState(false);
+
+  useEffect(() => {
+    setIsListEmpty(favRecipes.length === 0);
+  }, [favRecipes]);
+
 
   return (
     <div className='page'>
@@ -12,7 +18,7 @@ export default function FavRecipesPage(props) {
       <div className='page-contents'>
         <div className='dual-scroll-container'>
           <div className='scrollable-section left-section'>
-            <ul className='fav-list'>
+            {isListEmpty? <p>Favorite list is empty...</p>:<ul className='fav-list'>
               {favRecipes.map((recipe, index) => {
                 return (
                   <FavRecipeListComponent {...props} key={index} index={index}>
@@ -21,10 +27,10 @@ export default function FavRecipesPage(props) {
                 )
               })}
 
-            </ul>
+            </ul>}
           </div>
           <div className='scrollable-section right-section'>
-            <FavRecipeListDetails></FavRecipeListDetails>
+            {itemSelected? <FavRecipeListDetails></FavRecipeListDetails>:<p>Please select a recipe.</p>}
           </div>
 
         </div>

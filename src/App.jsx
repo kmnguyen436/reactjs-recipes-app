@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import axios from 'axios';
 import NavBar from './component/NavBar';
-import FoodRecipesAPI from './api/FoodRecipesAPI';
+import FoodRecipesAPI from './api/FoodRecipesAPISearch';
 import SideBar from './component/SideBar';
 import FavRecipesPage from './pages/FavRecipesPage';
 import DrinkRecipesListPage from './pages/DrinkRecipesListPage';
@@ -12,18 +12,9 @@ import { Route, Routes } from 'react-router-dom';
 import FoodRecipesListPage from './pages/FoodRecipesListPage';
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [favRecipes, setFavRecipes] = useState(['Macaroni', 'Pasta', 'Macaroni', 'Pasta',
-    'Macaroni', 'Pasta',
-    'Macaroni', 'Pasta',
-    'Macaroni', 'Pasta',
-    'Macaroni', 'Pasta',
-    'Macaroni', 'Pasta',
-    'Macaroni', 'Pasta',
-    'Macaroni', 'Pasta',
-    'Macaroni', 'Pasta',
-    'Macaroni', 'Pasta','Macaroni', 'Pasta','Macaroni', 'Pasta','Macaroni', 'Pasta','Macaroni', 'Pasta','Macaroni', 'Pasta'
-   ])
+  const [favRecipes, setRecipesList] = useState(['Macaroni'])
+  
+
  
   return (
     <> 

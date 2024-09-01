@@ -72,10 +72,11 @@
 .left-section {
   width: 40%;
   background-color: #f0f0f0;
+  margin-left: -40px;
 }
 
 .right-section {
-  width:60%;
+  width:65%;
   background-color: #e0e0e0;
   margin-left: 10px;
   margin-right: 10px;
@@ -147,3 +148,17 @@
 }
 
 
+.search-list-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 10px;
+  border-radius: 14px;
+  background: rgb(167, 191, 168);
+  margin-bottom: 15px;
+}
+.search-list-item:hover{
+  opacity: 70%;
+  cursor: pointer;
+}
