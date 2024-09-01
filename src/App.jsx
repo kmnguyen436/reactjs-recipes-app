@@ -13,15 +13,25 @@ import FoodRecipesListPage from './pages/FoodRecipesListPage';
 
 function App() {
   const [count, setCount] = useState(0)
-
+  const [favRecipes, setFavRecipes] = useState(['Macaroni', 'Pasta', 'Macaroni', 'Pasta',
+    'Macaroni', 'Pasta',
+    'Macaroni', 'Pasta',
+    'Macaroni', 'Pasta',
+    'Macaroni', 'Pasta',
+    'Macaroni', 'Pasta',
+    'Macaroni', 'Pasta',
+    'Macaroni', 'Pasta',
+    'Macaroni', 'Pasta',
+    'Macaroni', 'Pasta','Macaroni', 'Pasta','Macaroni', 'Pasta','Macaroni', 'Pasta','Macaroni', 'Pasta','Macaroni', 'Pasta'
+   ])
  
   return (
     <> 
       <SideBar></SideBar>
       <div className='container'>
         <Routes>
-          <Route path="/" element={<FavRecipesPage/>}/>
-          <Route path="/my-fav-recipes" element={<FavRecipesPage/>}/>
+          <Route path="/" element={<FavRecipesPage favRecipes={favRecipes} />}/>
+          <Route path="/my-fav-recipes"  element={<FavRecipesPage favRecipes={favRecipes} />}/>
           <Route path="/food-recipes-list" element={<FoodRecipesListPage/>}/>
           <Route path="/drink-recipes-list" element={<DrinkRecipesListPage/>}/>
         </Routes>
