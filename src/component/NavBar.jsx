@@ -1,42 +1,21 @@
-import React from 'react';
-import { FaBars } from "react-icons/fa";
-import { useState } from 'react';
 
+import React from 'react'
+import { useState } from 'react';
+import {CFormInput, CButton, CForm, CContainer, CNavbar, CNavbarBrand } from '@coreui/react';
 
 export default function NavBar() {
-  const [sideNavOpen, setSideNavOpen] = useState(false);
-  const [display, setDisplay] = useState([]);
-
-  function handleSideNavClick() {
-    setSideNavOpen(!sideNavOpen);
-    if (!sideNavOpen) {
-      setDisplay(['Favorite Recipes']);
-    }
-    else {
-      setDisplay([]);
-    }
-  }
-
-  return (
-    <nav className='navbar'>
-      <div className='nav-center'>
-        <div className='nav-header'>
-          <button className='nav-toggle'
-            onClick={handleSideNavClick}>
-            <FaBars />
-          </button>
-        </div>
-        {/* conditionally display navigation items here */}
-        {sideNavOpen && (
-          <div className='side-nav'>
-            <ul id='nav-list'>
-              {display.map((list, index) => (
-                <li className='nav-list-item' key={index}>{list}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-    </nav>
-  );
+    const [page, setPage] = useState('my-fav-recipes');
+    return (
+        <CNavbar className="bg-body-tertiary">
+            <CContainer fluid>
+                <CNavbarBrand/>
+                <CForm className="d-flex">
+                    <CFormInput type="search" className="me-2" placeholder="Search" />
+                    <CButton type="submit" color="success" variant="outline">
+                        Search
+                    </CButton>
+                </CForm>
+            </CContainer>
+        </CNavbar>
+    )
 }
