@@ -13,13 +13,11 @@
   },
   "dependencies": {
     "@coreui/coreui": "^5.1.2",
-    "@coreui/icons": "^3.0.1",
     "@coreui/react": "^5.3.0",
     "axios": "^1.7.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-icons/bi": "^5.3.0",
-    "react-icons/fa6": "^5.3.0",
+    "react-icons": "^5.3.0",
     "react-router-dom": "^6.26.1"
   },
   "devDependencies": {
