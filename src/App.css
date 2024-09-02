@@ -1,3 +1,9 @@
+.navbar{
+  height:100px;
+  background-color: #335145;
+  color: #EDEAD0;
+}
+
 #sidebar {
   position: absolute;
   width: 80px; 
@@ -7,6 +13,8 @@
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); 
   top:0px;
   z-index:200;
+  background-color: #1E352F;
+  color: #EDEAD0;
 }
 .border-bottom{
   height: 100px;
@@ -14,6 +22,7 @@
 
 #sidebar .header-text {
   display: none; 
+  color: #EDEAD0;
 }
 #sidebar:hover .header-text {
   font: bold 1.75rem "Fira Sans", sans-serif;
@@ -22,17 +31,33 @@
   margin-top: 50px;
 }
 
+
 #sidebar .header-icon {
   margin-top: -10px;
   font-size: 35px; 
   display: inline; 
   align-items: center; 
   justify-content: center; 
+  color: #EDEAD0;
 }
 
 /* Expanded width on hover */
 #sidebar:hover {
   width: 250px; 
+}
+.c-sidebar-nav {
+  display: flex;
+  flex-direction: column; 
+}
+
+.c-nav-item {
+  display: flex;
+  align-items: center; 
+  padding: 10px;
+}
+
+.nav-text {
+  font-size: 16px; 
 }
 
 /* Hide text by default */
@@ -41,25 +66,43 @@
 }
 /* Show text on hover */
 #sidebar:hover .nav-text {
-  display: inline-block; 
+  display:inline-flex; 
   margin-left: 10px; 
+  color:#ffffff;
+  margin-top: 5px;
+}
+.link{
+  display:inline-flex; 
+  text-decoration: none;
+}
+
+.nav-item:hover{
+  background-color:#43755D;
+  transition: background-color .3s ease-out;
+  -moz-transition: background-color .3s ease-out;
+  -webkit-transition: background-color .3s ease-out;
+  -o-transition: background-color .3s ease-out;
+  border-radius: 5px;
 }
 
 /* Centers the icon when not on hover */
 #sidebar .nav-icon {
-  margin-left: 6px;
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
+  margin: 5px;
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  transition: width .3s ease-out;
+  -moz-transition: width .3s ease-out;
+  -webkit-transition: width .3s ease-out;
+  -o-transition: width .3s ease-out;
+  color:#ffffff;
 }
-
 
 
 .dual-scroll-container {
   display: flex; 
   justify-content: space-between;
-  height: 90vh; 
-  overflow: hidden; 
+  height: 80vh; 
 }
 
 .scrollable-section {
@@ -67,44 +110,41 @@
   overflow-y: auto; 
   padding: 1rem;
   box-shadow: inset 0 -3px 5px rgba(0,0,0,0.1); 
+  border-radius: 10px;
+
+  
 }
 
 .left-section {
-  width: 40%;
-  background-color: #f0f0f0;
-  margin-left: -40px;
+  width: 30%;
+  margin-left: 10px;
+  background-color: #EDEAD0;
+  
 }
 
 .right-section {
-  width:65%;
-  background-color: #e0e0e0;
+  width:70%;
+  background-color: #EDEAD0;
   margin-left: 10px;
   margin-right: 10px;
-  margin-bottom: 10px;
-}
-
-
-#test{
-  margin-left: 100px;
-}
-
-.bg-body-tertiary{
-  height:100px;
 }
 
 .page-title{
   position: absolute;  
   top: 35px;
   left:110px;
+  color: #EDEAD0;
 
 }
 .page-contents{
+  background-color: #7A9B76;
   position: absolute;
-  top: 120px;
-  left: 100px;
-  width: calc(100% - 100px);
-  height: calc(100% - 120px);
-  overflow: auto;
+  top: 100px;
+  left: 80px;
+  width: calc(100% - 80px);
+  height: calc(100% - 100px);
+  overflow: hidden;
+  padding-left: 10px;
 }
 
 .fav-list {
@@ -112,7 +152,7 @@
   flex-direction: column;
   gap: 14px;
   font-size: 20px;
-  
+  margin-left: -40px;
 }
 .fav-list-text {
   margin-top: 15px;
@@ -125,15 +165,24 @@
   gap: 14px;
   padding: 10px;
   border-radius: 14px;
-  background: rgb(167, 191, 168);
+  background: #a7bfa8;
 }
 .actionsContainer button:hover {
   opacity: 0.5;
   font-size: 30px;
+  transition: opacity .3s ease-out;
+  -moz-transition: opacity.3s ease-out;
+  -webkit-transition: opacity.3s ease-out;
+  -o-transition: opacity .3s ease-out;
+
 }
 .fav-list-item:hover {
   opacity: 0.7;
   cursor: pointer;
+  transition: opacity .3s ease-out;
+  -moz-transition: opacity.3s ease-out;
+  -webkit-transition: opacity.3s ease-out;
+  -o-transition: opacity .3s ease-out;
 }
 
 .actionsContainer {
@@ -145,6 +194,7 @@
   border: none;
   background: transparent;
   cursor: pointer;
+  color:#851d2e;
 }
 
 
@@ -155,10 +205,135 @@
   gap: 14px;
   padding: 10px;
   border-radius: 14px;
-  background: rgb(167, 191, 168);
+  background: #a7bfa8;
   margin-bottom: 15px;
 }
 .search-list-item:hover{
   opacity: 70%;
   cursor: pointer;
+  transition: opacity .3s ease-out;
+  -moz-transition: opacity.3s ease-out;
+  -webkit-transition: opacity.3s ease-out;
+  -o-transition: opacity .3s ease-out;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.details-info {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.details-body {
+  display: flex;
+  justify-content: space-between;
+  overflow-y: auto; 
+  max-height: 80vh; 
+}
+
+.details-left, .details-right {
+  padding: 1rem;
+  background-color: #f0f0f0;
+  max-height: 100%; 
+  overflow-y: auto; 
+}
+
+.details-left {
+  flex: 3; 
+  margin-right: 1rem;
+}
+
+.details-right {
+  flex: 2; 
+  text-align: center;
+}
+
+
+.alphabet-nav {
+  padding-bottom: 10px;
+}
+.alphabet-button{
+  background-color: #FFE7E7;
+  border: 1px solid #FEE0E0;
+  border-radius: 11px;
+  color: #43755D;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 33.4929px;
+  padding: 2px 12px;
+  transition: border .2s ease-in-out,box-shadow .2s ease-in-out;
+  user-select: none;
+}
+
+.alphabet-button:active,
+.alphabet-button:hover,
+.alphabet-button:focus {
+  outline: 0;
+}
+
+
+.alphabet-button:hover {
+  background-color: #FFE3E3;
+  border-color: #FAA4A4;
+}
+
+.alphabet-button:active:hover,
+.alphabet-button:focus:hover,
+.alphabet-button:focus {
+  background-color: #3AB795;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
+}
+
+
+.alphabet-button.active {
+  background-color: #254133; /* Example active color */
+  color: white;
+  border-color: #828C51;
+}
+
+.details-left-body{
+  margin: 10px;
+  background-color: #f0f0f0;
+}
+
+#error-msg{
+  margin-left:40px;
+}
+
+/* recipe details favorites button */
+.save-favorite-button{
+  background: #254133;
+  border-radius: 999px;
+  box-shadow: #919c95 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+
+}
+
+.save-favorite-button:hover{
+  opacity: 70%;
+  background-color: #A6C36F;
+  transition: opacity .3s ease-out;
+  -moz-transition: opacity.3s ease-out;
+  -webkit-transition: opacity.3s ease-out;
+  -o-transition: opacity .3s ease-out;
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-const FoodRecipesAPISearch = ({searchType,input}) => {
+
+const FoodRecipesAPISearch = ({searchType,input, onRecipeClick}) => {
   const [recipes, setRecipes] = useState([]);
   const [error, setError] = useState(null);
 
@@ -29,18 +30,19 @@ const FoodRecipesAPISearch = ({searchType,input}) => {
   return (
 <div>
       {error ? (
-        <p>Error: {error}</p>
+        <p  id='error-msg'>Error: {error}</p>
       ) : (
         <>
           
           {recipes.length > 0 ? (
             <ul>
               {recipes.map((recipe) => (
-                <li className="search-list-item" key={recipe.idMeal}>{recipe.strMeal}</li>
+                <li className="search-list-item" key={recipe.idMeal} 
+                onClick={() => onRecipeClick(recipe)}>{recipe.strMeal}</li>
               ))}
             </ul>
           ) : (
-            <p>No recipes found.</p>
+            <p id='error-msg'>No recipes found.</p>
           )}
         </>
       )}
